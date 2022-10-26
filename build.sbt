@@ -42,6 +42,7 @@ def excludes(m: ModuleID): ModuleID =
 // Without forking, ctrl-c doesn't actually fully stop Spark
 run / fork := true
 Test / fork := true
+run / connectInput := true
 
 
 

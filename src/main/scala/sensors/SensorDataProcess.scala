@@ -106,9 +106,10 @@ object SensorDataProcess {
   }
 
   def main(args: Array[String]): Unit = {
-    // println("Enter the directory path")
+    println("Enter the directory path")
     //https://stackoverflow.com/questions/74132055/removing-run-fork-true-from-sbt-results-in-runtime-notfound-exception-a
-    val dir = "/Users/ajitkumar/Downloads/flice/data/" //scala.io.StdIn.readLine()
+    //https://github.com/sbt/sbt/issues/7055#issuecomment-1288878046
+    val dir = scala.io.StdIn.readLine()
     val futStats = getStatsFromFiles(dir)
     futStats.onComplete {
       case Success(stats) => printTheStats(stats)
